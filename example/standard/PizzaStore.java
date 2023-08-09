@@ -11,6 +11,7 @@ public class PizzaStore {
         PizzaChef chef1 = new PizzaChef(new CheesePizzaRecipe("Cheese"));
         PizzaChef chef2 = new PizzaChef(new BaconPizzaRecipe("Bacon"));
 
+        chef1.getPizzaName();
         chef1.getPizzaRecipe().pizzaDough();
         chef2.getPizzaRecipe().pizzaDough();
     }

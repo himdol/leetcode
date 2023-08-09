@@ -4,6 +4,7 @@ public class PizzaChef {
 
     private PizzaRecipe pizzaRecipe;
 
+
     public PizzaChef(PizzaRecipe pizzaRecipe) {
         this.pizzaRecipe = pizzaRecipe;
     }
@@ -15,6 +16,12 @@ public class PizzaChef {
     public void setPizzaRecipe(PizzaRecipe pizzaRecipe) {
         this.pizzaRecipe = pizzaRecipe;
     }
-
+    public void getPizzaName() {
+        if (pizzaRecipe instanceof CheesePizzaRecipe) {
+            System.out.println(((CheesePizzaRecipe) pizzaRecipe).getPizzaName());
+        } else if (pizzaRecipe instanceof BaconPizzaRecipe) {
+            System.out.println(((BaconPizzaRecipe) pizzaRecipe).getPizzaName());
+        }
+    }
 
 }

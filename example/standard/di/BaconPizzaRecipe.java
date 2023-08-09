@@ -12,4 +12,8 @@ public class BaconPizzaRecipe implements PizzaRecipe{
     public void pizzaDough() {
         System.out.println("make dough Bacon");
     }
+
+    public String getPizzaName() {
+        return pizzaName;
+    }
 }

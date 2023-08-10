@@ -42,7 +42,19 @@ public class Solution {
 
 
     /***
-     * 2023.08.09 - 2023.08.09
+     * 2023-08-10
+     * @param x
+     * @return
+     */
+    public boolean isPalindrome(int x) {
+
+
+
+        return true;
+    }
+
+    /***
+     *
      * @param l1, l2
      * constrains
      * The number of nodes in each linked list is in the range [1, 100].

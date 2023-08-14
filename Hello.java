@@ -9,7 +9,7 @@ public class Hello {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        boolean palindrome = solution.isPalindrome(-121);
+        boolean palindrome = solution.isPalindromeBestSolutions(-121);
     }
 
 }

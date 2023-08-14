@@ -79,6 +79,33 @@ public class Solution {
         return result;
     }
 
+
+    /***
+     * 2023-08-14 (Mon)
+     * @return boolean
+     */
+    public boolean isPalindromeBestSolutions(int x) {
+
+        if (x < 0) {
+            return false;
+        }
+
+        long reversed = 0;
+        long temp = x;
+
+        while (temp != 0) {
+            int digit = (int) (temp % 10);
+            reversed = reversed * 10 + digit;
+            temp /= 10;
+        }
+
+        System.out.println("(reversed == x)");
+        System.out.println((reversed == x));
+
+        return (reversed == x);
+
+    }
+
     /***
      *
      * @param l1, l2

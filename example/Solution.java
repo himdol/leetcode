@@ -86,14 +86,14 @@ public class Solution {
      */
     public boolean isPalindromeBestSolutions(int x) {
 
-        if (x < 0) {
+        if(x < 0) {
             return false;
         }
 
         long reversed = 0;
         long temp = x;
 
-        while (temp != 0) {
+        while(temp != 0) {
             int digit = (int) (temp % 10);
             reversed = reversed * 10 + digit;
             temp /= 10;
@@ -104,6 +104,50 @@ public class Solution {
 
         return (reversed == x);
 
+    }
+
+    /***
+     * 2023-08-14 (Mon)
+     * @param s
+     * @return
+     */
+    public int romanToInt(String s) {
+
+        int result = 0;
+        char[] charArray = s.toCharArray();
+        for(char c : charArray) {
+            result += this.convertTo(c);
+        }
+
+        int subResult = 0;
+        for(int i = 0; i < charArray.length; i++) {
+            if(i != charArray.length - 1) {
+                char c = charArray[i];
+                char v = charArray[i + 1];
+                if(c == 'I' && v == 'V' || c == 'I' && v == 'X') {
+                    subResult += this.convertTo(c) * 2;
+                } else if(c == 'X' && v == 'L' || c == 'X' && v == 'C') {
+                    subResult += this.convertTo(c) * 2;
+                } else if(c == 'C' && v == 'D' || c == 'C' && v == 'M') {
+                    subResult += this.convertTo(c) * 2;
+                }
+            }
+        }
+
+        return result - subResult;
+    }
+
+    private int convertTo(int c) {
+        return switch(c) {
+            case 'I' -> 1;
+            case 'V' -> 5;
+            case 'X' -> 10;
+            case 'L' -> 50;
+            case 'C' -> 100;
+            case 'D' -> 500;
+            case 'M' -> 1000;
+            default -> 0;
+        };
     }
 
     /***

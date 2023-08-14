@@ -42,15 +42,41 @@ public class Solution {
 
 
     /***
-     * 2023-08-10
-     * @param x
-     * @return
+     * 2023-08-14 (Mon)
+     * @return boolean
      */
     public boolean isPalindrome(int x) {
 
+        String v = String.valueOf(x);
+        char[] forward = new char[v.length()];
+        char[] backward = new char[v.length()];
+        boolean result = false;
 
+        for(int i = 0; i < v.length(); i++) {
+            forward[i] = v.charAt(i);
+        }
 
-        return true;
+        int j = 0;
+        for(int i = v.length() - 1; i >= 0; i--) {
+            backward[j] = v.charAt(i);
+            j++;
+        }
+
+        ArrayList<Boolean> resultArray = new ArrayList<>();
+        for(int i = 0; i < v.length(); i++) {
+            if(forward[i] == backward[i]) {
+                resultArray.add(true);
+            } else {
+                resultArray.add(false);
+            }
+        }
+
+        boolean contains = resultArray.contains(false);
+        if(Boolean.FALSE.equals(contains)) {
+            result = true;
+        }
+
+        return result;
     }
 
     /***
@@ -64,11 +90,8 @@ public class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
 
-
-
         return new ListNode();
     }
-
 
 
 }

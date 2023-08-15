@@ -9,7 +9,7 @@ public class Hello {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.romanToInt("MCMXCIV");
+        solution.longestCommonPrefix(new String[]{"fall", "fan", "flight"});
     }
 
 }

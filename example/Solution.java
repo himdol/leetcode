@@ -3,6 +3,8 @@ package example;
 import example.vo.ListNode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class Solution {
@@ -149,6 +151,43 @@ public class Solution {
             default -> 0;
         };
     }
+
+    /***
+     * todo 다시 풀어볼 것
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefix(String[] strs) {
+
+        Arrays.sort(strs, Comparator.comparing(String::length));
+        Arrays.stream(strs).forEach(System.out::println);
+        String s = strs[0];
+        String result = "";
+        StringBuffer compare = new StringBuffer();
+        StringBuffer backUp = new StringBuffer();
+        int idx = 0;
+        for(char c : s.toCharArray()) {
+            compare.append(c);
+            System.out.println("compare :: " + compare);
+
+            for(int i=1; i<strs.length; i++) {
+                StringBuffer makeToCompare = new StringBuffer();
+                for(char b : strs[i].toCharArray()) {
+                    makeToCompare.append(b);
+                    System.out.println("make :: ["+i+"] ::: " + makeToCompare);
+                    if(makeToCompare.compareTo(compare) == 0) {
+
+                        System.out.println(makeToCompare.compareTo(compare));
+                        result = String.valueOf(makeToCompare);
+                    }
+                }
+            }
+        }
+        System.out.println("Result ::> " + result);
+
+        return "";
+    }
+
 
     /***
      *
